@@ -23,26 +23,37 @@
  */
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { SALONKEE_URL, WHATSAPP_URL } from "../lib/constants";
 import type { Dictionary } from "../lib/dictionaries/fr";
 
 const SETTLE_MS = 150;
+const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
+
+function subscribeReducedMotion(onChange: () => void) {
+  const mql = window.matchMedia(REDUCED_MOTION_QUERY);
+  mql.addEventListener("change", onChange);
+  return () => mql.removeEventListener("change", onChange);
+}
+
+function getReducedMotionSnapshot() {
+  return window.matchMedia(REDUCED_MOTION_QUERY).matches;
+}
+
+function getReducedMotionServerSnapshot() {
+  return false;
+}
 
 export default function StickyBookingBar({ dict }: { dict: Dictionary }) {
   const [show, setShow] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const reducedMotion = useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotionSnapshot,
+    getReducedMotionServerSnapshot
+  );
   const pendingShow = useRef(false);
   const settleTimer = useRef<number | undefined>(undefined);
-
-  useEffect(() => {
-    const mql = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mql.matches);
-    const onMotionChange = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
-    mql.addEventListener("change", onMotionChange);
-    return () => mql.removeEventListener("change", onMotionChange);
-  }, []);
 
   useEffect(() => {
     const heroEnd = document.querySelector('[data-scroll-boundary="hero-end"]');

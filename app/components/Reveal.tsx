@@ -89,9 +89,19 @@ export default function Reveal({ children, delay = 0 }: RevealProps) {
 
   const childProps = child.props as { className?: string; style?: CSSProperties };
 
+  type ClonedHostProps = {
+    ref: typeof ref;
+    className: string;
+    style: CSSProperties;
+  };
+
   // cloneElement + fusion de props polymorphes : typage volontairement
-  // pragmatique (cast), composant interne dont le seul usage est de
-  // recevoir une balise hôte valide en enfant unique (voir JSDoc ci-dessus).
+  // pragmatique (cast ciblé, plus de `any`), composant interne dont le
+  // seul usage est de recevoir une balise hôte valide en enfant unique
+  // (voir JSDoc ci-dessus). Le forwarding de `ref` via cloneElement est
+  // le mécanisme prévu par React pour ce cas ; la règle react-hooks/refs
+  // ne le distingue pas encore d'une lecture de ref pendant le rendu.
+  // eslint-disable-next-line react-hooks/refs
   return cloneElement(child, {
     ref,
     className: [childProps.className, motionClass].filter(Boolean).join(" "),
@@ -99,5 +109,5 @@ export default function Reveal({ children, delay = 0 }: RevealProps) {
       ...childProps.style,
       transitionDelay: state === "visible" ? `${delay}ms` : "0ms",
     },
-  } as any);
+  } as ClonedHostProps);
 }
