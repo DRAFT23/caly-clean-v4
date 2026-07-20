@@ -3,10 +3,10 @@ import { SALONKEE_URL, WHATSAPP_URL, INSTAGRAM_URL } from "../lib/constants";
 import type { Dictionary } from "../lib/dictionaries/fr";
 
 const buttonClass =
-  "rounded-full bg-[#617261] px-8 py-4 text-center text-sm font-semibold text-white transition hover:bg-[#566b59]";
+  "rounded-full bg-[#617261] px-8 py-4 text-center text-sm font-semibold text-white outline-none transition hover:bg-[#566b59] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59]";
 
 const mobileButtonClass =
-  "rounded-full border border-white/20 bg-white/10 px-6 py-4 text-center text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/15";
+  "rounded-full border border-white/20 bg-white/10 px-6 py-4 text-center text-sm font-semibold text-white backdrop-blur-md outline-none transition hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b9975b]";
 
 export default function Hero({ dict }: { dict: Dictionary }) {
   const t = dict.hero;

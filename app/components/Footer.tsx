@@ -8,6 +8,14 @@ import {
 } from "../lib/constants";
 import type { Dictionary } from "../lib/dictionaries/fr";
 
+// Halo doré cohérent avec la couleur déjà utilisée pour l'état hover sur
+// fond sombre : le focus clavier reprend l'accent existant plutôt que
+// d'en introduire un nouveau.
+const focusLink =
+  "outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#B9975B]";
+const focusPill =
+  "outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#B9975B]";
+
 export default function Footer({ dict }: { dict: Dictionary }) {
   const t = dict.footer;
 
@@ -43,7 +51,7 @@ export default function Footer({ dict }: { dict: Dictionary }) {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block transition hover:text-[#B9975B]"
+                className={`inline-block transition hover:text-[#B9975B] ${focusLink}`}
               >
                 ☎ {PHONE_DISPLAY}
               </a>
@@ -53,7 +61,7 @@ export default function Footer({ dict }: { dict: Dictionary }) {
               href={MAPS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center rounded-full border border-white/15 px-6 py-3 text-sm transition hover:border-[#B9975B] hover:text-[#B9975B]"
+              className={`mt-8 inline-flex items-center rounded-full border border-white/15 px-6 py-3 text-sm transition hover:border-[#B9975B] hover:text-[#B9975B] ${focusPill}`}
             >
               {t.mapsLabel}
             </a>
@@ -64,7 +72,7 @@ export default function Footer({ dict }: { dict: Dictionary }) {
               href={SALONKEE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition hover:text-[#B9975B]"
+              className={`transition hover:text-[#B9975B] ${focusLink}`}
             >
               {t.bookLabel}
             </a>
@@ -73,7 +81,7 @@ export default function Footer({ dict }: { dict: Dictionary }) {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition hover:text-[#B9975B]"
+              className={`transition hover:text-[#B9975B] ${focusLink}`}
             >
               {t.whatsappLabel}
             </a>
@@ -82,7 +90,7 @@ export default function Footer({ dict }: { dict: Dictionary }) {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition hover:text-[#B9975B]"
+              className={`transition hover:text-[#B9975B] ${focusLink}`}
             >
               {t.instagramLabel}
             </a>
@@ -95,7 +103,7 @@ export default function Footer({ dict }: { dict: Dictionary }) {
         </div>
 
         <div className="mt-20 border-t border-white/10 pt-8">
-          <div className="flex flex-col items-center justify-between gap-4 text-sm text-white/40 md:flex-row">
+          <div className="flex flex-col items-center justify-between gap-4 text-sm text-white/55 md:flex-row">
             <p>{t.copyright}</p>
             <p>{t.tagline}</p>
           </div>

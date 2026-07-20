@@ -4,7 +4,7 @@ import { SALONKEE_URL, WHATSAPP_URL, INSTAGRAM_URL } from "../lib/constants";
 import type { Dictionary } from "../lib/dictionaries/fr";
 
 const buttonClass =
-  "rounded-full border border-white/15 bg-[#3a302c] px-8 py-4 text-center text-sm font-semibold text-white transition hover:bg-[#4a3d38]";
+  "rounded-full border border-white/15 bg-[#3a302c] px-8 py-4 text-center text-sm font-semibold text-white outline-none transition hover:bg-[#4a3d38] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b9975b]";
 
 export default function CTA({ dict }: { dict: Dictionary }) {
   const t = dict.cta;

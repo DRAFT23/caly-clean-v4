@@ -31,11 +31,11 @@ export default function Reviews({ dict }: { dict: Dictionary }) {
           </div>
         </Reveal>
 
-        <div className="mt-14 flex gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
+        <div className="mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
           {t.items.map((review) => (
             <article
               key={review.name}
-              className="min-w-[82%] rounded-[32px] border border-[#dcc8b5]/70 bg-white p-8 shadow-[0_18px_50px_rgba(60,35,20,0.07)] md:min-w-0 md:p-10"
+              className="min-w-[82%] snap-start rounded-[32px] border border-[#dcc8b5]/70 bg-white p-8 shadow-[0_18px_50px_rgba(60,35,20,0.07)] md:min-w-0 md:snap-none md:p-10"
             >
               <div className="flex items-center justify-between">
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#566b59] font-serif text-2xl text-white">
@@ -68,12 +68,12 @@ export default function Reviews({ dict }: { dict: Dictionary }) {
           href={SALONKEE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 block rounded-[28px] border border-[#dcc8b5]/70 bg-white/85 px-6 py-5 text-center shadow-[0_16px_40px_rgba(60,35,20,0.06)] md:mx-auto md:max-w-md"
+          className="mt-6 block rounded-[28px] border border-[#dcc8b5]/70 bg-white/85 px-6 py-5 text-center shadow-[0_16px_40px_rgba(60,35,20,0.06)] transition hover:border-[#6f836f] hover:bg-white outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59] md:mx-auto md:max-w-md"
         >
           <span className="block font-serif text-2xl text-[#2a2320]">
             {t.ctaTitle}
           </span>
-          <span className="mt-1 block text-sm font-semibold text-[#6f836f]">
+          <span className="mt-1 block text-sm font-semibold text-[#566b59]">
             {t.ctaLink}
           </span>
         </a>

@@ -9,7 +9,13 @@ function closeMobileMenu() {
 }
 
 const itemClass =
-  "flex items-center justify-between rounded-full bg-[#617261] px-5 py-3 text-base font-semibold text-white";
+  "flex items-center justify-between rounded-full bg-[#617261] px-5 py-3 text-base font-semibold text-white outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59]";
+
+const subItemClass =
+  "rounded-lg py-1 outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
+
+const navLinkClass =
+  "transition hover:text-[#566b59] outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#566b59]";
 
 export default function Navbar({ dict }: { dict: Dictionary }) {
   const t = dict.nav;
@@ -20,8 +26,9 @@ export default function Navbar({ dict }: { dict: Dictionary }) {
     <nav className="fixed left-0 top-0 z-[9999] w-full border-b border-[#dcc8b5]/50 bg-[#f8f4ef]/95 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
         <details id="mobile-menu" className="relative md:hidden">
-          <summary className="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-full bg-[#617261] text-xl font-semibold text-white">
-            ☰
+          <summary className="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-full bg-[#617261] text-xl font-semibold text-white outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59]">
+            <span aria-hidden="true">☰</span>
+            <span className="sr-only">Menu</span>
           </summary>
 
           <div className="fixed left-0 right-0 top-[73px] z-[9999] border-b border-[#dcc8b5]/60 bg-[#f8f4ef] px-6 py-6 shadow-[0_20px_60px_rgba(60,35,20,0.12)]">
@@ -31,15 +38,15 @@ export default function Navbar({ dict }: { dict: Dictionary }) {
               </a>
 
               <details className="rounded-[28px] bg-[#617261] px-5 py-3">
-                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-white">
+                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-white outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59]">
                   {t.services} <span>+</span>
                 </summary>
 
                 <div className="mt-4 grid gap-3 border-t border-white/20 pt-4 text-white">
-                  <a href="#services" onClick={closeMobileMenu}>{t.servicesMenu.manucure}</a>
-                  <a href="#services" onClick={closeMobileMenu}>{t.servicesMenu.pieds}</a>
-                  <a href="#services" onClick={closeMobileMenu}>{t.servicesMenu.nailart}</a>
-                  <a href="#services" onClick={closeMobileMenu}>{t.servicesMenu.offres}</a>
+                  <a href="#services" onClick={closeMobileMenu} className={subItemClass}>{t.servicesMenu.manucure}</a>
+                  <a href="#services" onClick={closeMobileMenu} className={subItemClass}>{t.servicesMenu.pieds}</a>
+                  <a href="#services" onClick={closeMobileMenu} className={subItemClass}>{t.servicesMenu.nailart}</a>
+                  <a href="#services" onClick={closeMobileMenu} className={subItemClass}>{t.servicesMenu.offres}</a>
                 </div>
               </details>
 
@@ -75,16 +82,16 @@ export default function Navbar({ dict }: { dict: Dictionary }) {
         </Link>
 
         <div className="hidden items-center gap-8 text-sm text-[#2a2320]/70 md:flex">
-          <a href="#gallery">{t.gallery}</a>
-          <a href="#services">{t.services}</a>
-          <a href="#world">{t.world}</a>
-          <a href="#reviews">{t.reviews}</a>
-          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
+          <a href="#gallery" className={navLinkClass}>{t.gallery}</a>
+          <a href="#services" className={navLinkClass}>{t.services}</a>
+          <a href="#world" className={navLinkClass}>{t.world}</a>
+          <a href="#reviews" className={navLinkClass}>{t.reviews}</a>
+          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className={navLinkClass}>
             {t.instagram}
           </a>
           <Link
             href={otherLocaleHref}
-            className="rounded-full border border-[#dcc8b5] px-3 py-1 text-xs font-semibold text-[#2a2320] transition hover:border-[#6f836f] hover:text-[#6f836f]"
+            className="rounded-full border border-[#dcc8b5] px-3 py-1 text-xs font-semibold text-[#2a2320] outline-none transition hover:border-[#6f836f] hover:text-[#6f836f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59]"
           >
             {otherLocaleLabel}
           </Link>
@@ -94,7 +101,7 @@ export default function Navbar({ dict }: { dict: Dictionary }) {
           href={SALONKEE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full bg-[#617261] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#566b59] md:px-6"
+          className="rounded-full bg-[#617261] px-5 py-3 text-sm font-semibold text-white outline-none transition hover:bg-[#566b59] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59] md:px-6"
         >
           {t.book}
         </a>

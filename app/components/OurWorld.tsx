@@ -55,7 +55,7 @@ export default function OurWorld({ dict }: { dict: Dictionary }) {
           {/* Texte */}
           <Reveal>
             <div className="px-1 py-4 md:px-8 md:py-0">
-              <p className="mb-4 text-[11px] uppercase tracking-[0.32em] text-white/60 md:text-xs">
+              <p className="mb-4 text-[11px] uppercase tracking-[0.32em] text-white/85 md:text-xs">
                 {t.eyebrow}
               </p>
 
@@ -63,7 +63,7 @@ export default function OurWorld({ dict }: { dict: Dictionary }) {
                 {t.title}
               </h2>
 
-              <p className="mt-6 text-base leading-7 text-white/75 md:text-lg md:leading-8">
+              <p className="mt-6 text-base leading-7 text-white/85 md:text-lg md:leading-8">
                 {t.paragraph}
               </p>
 

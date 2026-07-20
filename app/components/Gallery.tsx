@@ -27,11 +27,11 @@ export default function Gallery({ dict }: { dict: Dictionary }) {
 
         {/* MOBILE */}
         <div className="md:hidden">
-          <div className="-mx-6 flex gap-5 overflow-x-auto px-6 pb-4">
+          <div className="-mx-6 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-pl-6 px-6 pb-4">
             {t.mobileImages.map((image) => (
               <div
                 key={image.src}
-                className="relative h-[360px] min-w-[82%] overflow-hidden rounded-[30px] shadow-[0_20px_60px_rgba(60,35,20,0.10)]"
+                className="relative h-[360px] min-w-[82%] snap-start overflow-hidden rounded-[30px] shadow-[0_20px_60px_rgba(60,35,20,0.10)]"
               >
                 <Image
                   src={image.src}
@@ -55,12 +55,12 @@ export default function Gallery({ dict }: { dict: Dictionary }) {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 block rounded-[28px] border border-[#dcc8b5]/70 bg-white/85 px-6 py-5 text-center shadow-[0_16px_40px_rgba(60,35,20,0.06)]"
+            className="mt-4 block rounded-[28px] border border-[#dcc8b5]/70 bg-white/85 px-6 py-5 text-center shadow-[0_16px_40px_rgba(60,35,20,0.06)] transition hover:border-[#6f836f] hover:bg-white outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59]"
           >
             <span className="block font-serif text-2xl text-[#2a2320]">
               {t.ctaTitle}
             </span>
-            <span className="mt-1 block text-sm font-semibold text-[#6f836f]">
+            <span className="mt-1 block text-sm font-semibold text-[#566b59]">
               {t.ctaLink}
             </span>
           </a>

@@ -30,20 +30,20 @@ function ServiceCard({
             {service.title}
           </h3>
 
-          <p className="mt-2 max-w-2xl text-base leading-7 text-[#2a2320]/60">
+          <p className="mt-2 max-w-2xl text-base leading-7 text-[#2a2320]/65">
             {service.description}
           </p>
 
           {(service.time || service.note || service.oldPrice) && (
-            <div className="mt-4 flex flex-wrap gap-3 text-sm text-[#2a2320]/55">
+            <div className="mt-4 flex flex-wrap gap-3 text-sm text-[#2a2320]/65">
               {service.time && (
-                <span className="rounded-full bg-[#6f836f]/10 px-3 py-1 text-[#6f836f]">
+                <span className="rounded-full bg-[#6f836f]/10 px-3 py-1 text-[#566b59]">
                   {service.time}
                 </span>
               )}
               {service.note && <span>{service.note}</span>}
               {service.oldPrice && (
-                <span className="line-through opacity-60">
+                <span className="line-through">
                   {oldPriceLabel} {service.oldPrice}
                 </span>
               )}
@@ -98,7 +98,9 @@ export default function Services({ dict }: { dict: Dictionary }) {
                 <button
                   type="button"
                   onClick={() => setOpenMobileTab(isOpen ? null : tab.id)}
-                  className="flex w-full items-center justify-between px-2 py-3 text-left"
+                  aria-expanded={isOpen}
+                  aria-controls={`${tab.id}-panel`}
+                  className="flex w-full items-center justify-between rounded-2xl px-2 py-3 text-left outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59]"
                 >
                   <span className="font-serif text-3xl text-[#2a2320]">
                     {tab.label}
@@ -114,7 +116,7 @@ export default function Services({ dict }: { dict: Dictionary }) {
                 </button>
 
                 {isOpen && (
-                  <div className="mt-4">
+                  <div id={`${tab.id}-panel`} className="mt-4">
                     {t.data[tab.id as Category].map((service, i) => (
                       <ServiceCard
                         key={`${tab.id}-${i}`}
@@ -135,7 +137,8 @@ export default function Services({ dict }: { dict: Dictionary }) {
               key={tab.id}
               type="button"
               onClick={() => setActiveTab(tab.id as Category)}
-              className={`rounded-full border px-6 py-3 text-sm transition ${
+              aria-current={activeTab === tab.id ? "true" : undefined}
+              className={`rounded-full border px-6 py-3 text-sm transition outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59] ${
                 activeTab === tab.id
                   ? "border-[#617261] bg-[#617261] font-semibold text-white"
                   : "border-[#dcc8b5] bg-white/80 text-[#2a2320] hover:border-[#566b59] hover:text-[#566b59]"

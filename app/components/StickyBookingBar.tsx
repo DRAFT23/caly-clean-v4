@@ -114,7 +114,7 @@ export default function StickyBookingBar({ dict }: { dict: Dictionary }) {
         href={SALONKEE_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex-1 rounded-full bg-[#617261] py-3 text-center text-sm font-semibold text-white transition-[background-color] duration-200 hover:bg-[#566b59]"
+        className="flex-1 rounded-full bg-[#617261] py-3 text-center text-sm font-semibold text-white outline-none transition-[background-color] duration-200 hover:bg-[#566b59] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59]"
       >
         {dict.hero.book}
       </a>
@@ -123,7 +123,7 @@ export default function StickyBookingBar({ dict }: { dict: Dictionary }) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={dict.hero.whatsapp}
-        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#dcc8b5] text-[#2a2320] transition-[border-color,color] duration-200 hover:border-[#617261] hover:text-[#617261]"
+        className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#dcc8b5] text-[#2a2320] outline-none transition-[border-color,color] duration-200 hover:border-[#617261] hover:text-[#617261] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59]"
       >
         <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
           <path d="M12.04 2c-5.5 0-10 4.5-10 10 0 1.77.46 3.45 1.32 4.94L2 22l5.24-1.37a9.96 9.96 0 0 0 4.8 1.22h.01c5.5 0 10-4.5 10-10s-4.5-9.85-10.01-9.85Zm5.86 14.2c-.25.7-1.24 1.32-1.98 1.47-.53.11-1.22.2-3.55-.76-2.98-1.23-4.9-4.24-5.05-4.44-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.6-.37.8-.37.2 0 .4 0 .57.01.19.01.43-.07.67.51.25.6.85 2.07.92 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.3.38-.44.51-.15.15-.3.31-.13.6.17.3.76 1.25 1.62 2.02 1.12.99 2.06 1.3 2.36 1.44.3.15.48.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.66-.15.27.1 1.72.81 2.01.96.3.15.49.22.56.34.08.13.08.72-.17 1.42Z" />
