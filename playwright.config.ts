@@ -23,7 +23,27 @@ export default defineConfig({
       },
     },
     {
+      name: "desktop-firefox",
+      use: {
+        ...devices["Desktop Firefox"],
+        viewport: { width: 1440, height: 1000 },
+      },
+    },
+    {
+      name: "desktop-webkit",
+      use: {
+        ...devices["Desktop Safari"],
+        viewport: { width: 1440, height: 1000 },
+      },
+    },
+    {
       name: "mobile-chromium",
+      use: {
+        ...devices["Pixel 5"],
+      },
+    },
+    {
+      name: "mobile-webkit",
       use: {
         ...devices["iPhone 13"],
       },
