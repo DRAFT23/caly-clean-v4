@@ -1,4 +1,3 @@
-import Image from "next/image";
 import HeroVideo from "./HeroVideo";
 import { SALONKEE_URL, WHATSAPP_URL, INSTAGRAM_URL } from "../lib/constants";
 import type { Dictionary } from "../lib/dictionaries/fr";
@@ -24,12 +23,12 @@ export default function Hero({ dict }: { dict: Dictionary }) {
       <h1 className="sr-only">{t.a11yTitle}</h1>
 
       {/* MOBILE */}
-      <div data-scroll-boundary="hero-end" className="relative min-h-screen bg-[#2a2320] md:hidden">
+      <div data-scroll-boundary="hero-end" className="relative min-h-dvh bg-[#2a2320] md:hidden">
         <HeroVideo />
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/20" />
 
-        <div className="relative z-10 flex min-h-screen flex-col justify-end px-6 pb-10 pt-28 text-white">
+        <div className="relative z-10 flex min-h-dvh flex-col justify-end px-6 pb-10 pt-28 text-white">
           <p className="mb-4 text-[11px] uppercase tracking-[0.35em] text-white/70">
             {t.badge}
           </p>
@@ -94,10 +93,10 @@ export default function Hero({ dict }: { dict: Dictionary }) {
       </div>
 
       {/* DESKTOP */}
-      <div className="relative hidden min-h-screen px-6 pt-28 md:block">
+      <div className="relative hidden min-h-dvh px-6 pt-28 md:block">
         <div className="absolute left-[-140px] top-20 h-[420px] w-[420px] rounded-full bg-[#6f836f]/12 blur-3xl" />
 
-        <div className="relative mx-auto grid min-h-[calc(100vh-7rem)] max-w-7xl items-center gap-16 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="relative mx-auto grid min-h-[calc(100dvh-7rem)] max-w-7xl items-center gap-16 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <p className="mb-6 text-xs uppercase tracking-[0.45em] text-[#6f836f]">
               {t.badge}
@@ -164,14 +163,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
             <div className="absolute -bottom-10 left-10 h-44 w-44 rounded-full bg-[#6f836f]/18 blur-3xl" />
 
             <div className="relative h-[760px] overflow-hidden rounded-[46px] shadow-[0_40px_120px_rgba(40,30,20,0.18)]">
-              <Image
-                src="/hero-portrait.webp"
-                alt="Caly Nails"
-                fill
-                priority
-                sizes="(min-width: 1024px) 55vw, 90vw"
-                className="object-cover transition duration-700 hover:scale-105"
-              />
+              <HeroVideo />
             </div>
           </div>
         </div>
