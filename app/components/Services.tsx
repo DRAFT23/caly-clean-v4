@@ -4,7 +4,7 @@ import { useState } from "react";
 import Reveal from "./Reveal";
 import type { Dictionary } from "../lib/dictionaries/fr";
 
-type Category = "manucure" | "pieds" | "nailart" | "offres";
+type Category = "manucure" | "pieds" | "nailart" | "offres" | "gel";
 
 type Service = {
   title: string;

@@ -30,6 +30,7 @@ const fr: Dictionary = {
       pieds: "Beauté des pieds",
       nailart: "Nail Art",
       offres: "Offres",
+      gel: "Gel",
     },
   },
   hero: {
@@ -75,6 +76,7 @@ const fr: Dictionary = {
     oldPriceLabel: "au lieu de",
     tabs: [
       { id: "manucure", label: "Manucure" },
+      { id: "gel", label: "Gel" },
       { id: "pieds", label: "Beauté des pieds" },
       { id: "nailart", label: "Nail Art" },
       { id: "offres", label: "Offres" },
@@ -87,13 +89,15 @@ const fr: Dictionary = {
         { title: "Manucure & semi-permanent", description: "Un résultat brillant, durable et soigné.", price: "65 CHF", time: "45 min", note: "+ dépose add. +10 CHF" },
         { title: "Semi-permanent sans manucure", description: "Limage et pose de semi-permanent sur ongles naturels.", price: "50 CHF", time: "30 min" },
         { title: "Renforcement sur ongle naturel", description: "Pour renforcer l'ongle tout en gardant un rendu naturel.", price: "75 CHF", time: "50 min" },
+        { title: "Réparation ongle cassé", description: "Correction ponctuelle pour retrouver une pose harmonieuse.", price: "dès 5 CHF" },
+        { title: "Dépose semi-permanent", description: "Retrait doux et propre du semi-permanent.", price: "20 CHF", time: "20 min" },
+        { title: "Mini manucure", description: "Soin léger réservé aux moins de 14 ans.", price: "20 CHF", time: "15 min", note: "moins de 14 ans" },
+      ],
+      gel: [
         { title: "Remplissage gel", description: "Entretien de votre pose gel jusqu'à 4 semaines.", price: "90 CHF", time: "75 min", note: "max 4 semaines" },
         { title: "Remplissage gel dès 4 semaines", description: "Remise en beauté complète de votre pose gel.", price: "100 CHF", time: "90 min" },
         { title: "Pose gel complète au chablon", description: "Extension complète avec construction sur mesure.", price: "120 CHF", time: "90 min" },
-        { title: "Réparation ongle cassé", description: "Correction ponctuelle pour retrouver une pose harmonieuse.", price: "dès 5 CHF" },
-        { title: "Dépose semi-permanent", description: "Retrait doux et propre du semi-permanent.", price: "20 CHF", time: "20 min" },
         { title: "Dépose gel", description: "Retrait du gel avec soin de l'ongle naturel.", price: "30 CHF", time: "30 min" },
-        { title: "Mini manucure", description: "Soin léger réservé aux moins de 14 ans.", price: "20 CHF", time: "15 min", note: "moins de 14 ans" },
       ],
       pieds: [
         { title: "Pédicure express sans vernis", description: "Soin rapide pour des pieds nets et soignés.", price: "50 CHF", time: "30 min" },
