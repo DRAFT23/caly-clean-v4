@@ -2,22 +2,9 @@
 
 # Projet
 
-Caly Nails est un site vitrine premium développé avec Next.js 15, React 19, TypeScript et Tailwind CSS.
+Caly Nails est un site vitrine premium développé avec Next.js, React, TypeScript et Tailwind CSS.
 
 L'objectif est d'obtenir une qualité comparable à Apple, Stripe, Linear, Vercel et Framer.
-
-# Skills
-
-Utilise automatiquement les Skills les plus adaptés disponibles dans le projet :
-
-- frontend-design
-- web-design-guidelines
-- impeccable
-- high-end-visual-design
-- emil-design-eng
-- tailwind-design-system
-- vercel-react-best-practices
-- seo-audit
 
 # Méthode
 
@@ -28,57 +15,49 @@ Avant toute modification :
 - proposer la correction minimale
 - ne jamais modifier du code au hasard
 
-# Développement
+# Règles absolues
 
-Toujours privilégier :
-
-- simplicité
-- lisibilité
-- maintenabilité
-- composants réutilisables
-- bonnes pratiques React
-- bonnes pratiques Next.js
-- bonnes pratiques Tailwind
-- bonnes pratiques TypeScript
-
-Ne jamais créer de dette technique.
+- Simplicité, lisibilité, maintenabilité, composants réutilisables.
+- Bonnes pratiques React, Next.js, Tailwind, TypeScript.
+- Ne jamais créer de dette technique.
+- Travailler sur une seule section à la fois.
+- Préserver les fonctionnalités existantes.
+- Corriger uniquement les erreurs liées à la tâche en cours.
 
 # Design
 
-Toujours rechercher :
-
-- une hiérarchie visuelle claire
-- un excellent spacing
-- une typographie premium
-- un responsive irréprochable
-- des animations discrètes
-- une cohérence visuelle
-- une excellente accessibilité
+Toujours rechercher une hiérarchie visuelle claire, un excellent spacing, une typographie premium, un responsive irréprochable, des animations discrètes, une cohérence visuelle, une excellente accessibilité.
 
 Éviter les effets tape-à-l'œil.
 
 # Performance
 
-Optimiser :
+Optimiser images, vidéos, bundle, lazy loading, Core Web Vitals.
 
-- images
-- vidéos
-- bundle
-- lazy loading
-- Core Web Vitals
+# Règles Git
 
-# Workflow
+- `main` = production stable. `v5` = développement et Preview.
+- Ne jamais push ni fusionner dans `main` sans demande explicite.
+- Changements notables via pull request ; CI GitHub Actions obligatoire avant fusion.
+- Détails → [docs/development-workflow.md](docs/development-workflow.md)
 
-Toujours travailler sur une seule section à la fois.
+# Sécurité
 
-Préserver les fonctionnalités existantes.
+- Ne jamais afficher, committer ou logger un secret.
+- `.env*` et `.vercel` restent locaux, jamais versionnés.
+- Détails → [docs/security.md](docs/security.md)
+
+# Commandes de validation
 
 Après une modification importante :
 
-- lancer npx tsc --noEmit
-- lancer npm run lint si disponible
-- lancer npm run build
+- `npx tsc --noEmit`
+- `npm run lint`
+- `npm run build`
+- `npm run test:e2e` (si la modification touche une page/route testée)
 
-Corriger uniquement les erreurs liées à la tâche.
+# Documentation et Skills
 
-Ce fichier servira de contexte permanent pour toutes les futures conversations.
+- Documentation détaillée → [docs/](docs/) (architecture, workflow, sécurité, déploiement, workflow IA)
+- Expertise réutilisable → `.claude/skills/`, index dans [docs/skills.md](docs/skills.md)
+- Ce fichier reste une constitution courte et stable : les détails vivent dans `docs/` et `.claude/skills/`, jamais dupliqués ici.
