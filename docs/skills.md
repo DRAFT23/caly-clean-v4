@@ -42,3 +42,5 @@ Ces 5 agents sont eux aussi hérités du scope global Claude Code (`~/.claude/ag
 | `security-auditor` | Avant un merge vers la branche de production. | Audite la sécurité de bout en bout : code applicatif, dépendances, configuration plateforme. |
 | `seo-content-reviewer` | Avant publication de contenu. | Vérifie le SEO technique et la qualité éditoriale : meta tags, schema.org, sitemap/robots, ton, efficacité des CTA. |
 | `project-bootstrap` | À la création d'un nouveau projet. | Initialise CI, branch protection, connexion à la plateforme de déploiement, `dependabot.yml`, structure `docs/` et identité visuelle de départ. |
+
+Permissions Bash étendues (commit/push) le 24/07/2026 — voir ~/.claude/settings.json
