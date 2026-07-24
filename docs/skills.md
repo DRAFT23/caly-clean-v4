@@ -1,6 +1,6 @@
 # Skills
 
-Expertise réutilisable versionnée dans `.claude/skills/`, invoquée automatiquement par Claude Code selon le contexte de la demande. Aucun skill ne commit, ne push ni ne déploie de lui-même — ils analysent et proposent, l'utilisateur décide.
+Ces 10 skills sont désormais hérités du scope global Claude Code (`~/.claude/skills/`), partagés entre projets, et ne sont plus versionnés dans ce dépôt. Ils restent invoqués automatiquement par Claude Code selon le contexte de la demande. Aucun skill ne commit, ne push ni ne déploie de lui-même — ils analysent et proposent, l'utilisateur décide.
 
 Audit (2026-07-22) : les 10 skills ont un frontmatter valide (`name` + `description` avec déclencheurs explicites), une responsabilité distincte et documentée ("Ce que ce skill ne fait pas"), sans chevauchement à fusionner.
 
