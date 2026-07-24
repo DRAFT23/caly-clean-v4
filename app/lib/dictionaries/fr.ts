@@ -136,6 +136,11 @@ const fr: Dictionary = {
       "Respect de l'ongle naturel",
       "Une expérience chaleureuse",
     ],
+    images: {
+      main: "Poste de travail Caly Nails",
+      hygiene: "Hygiène et soin chez Caly Nails",
+      products: "Produits professionnels Caly Nails",
+    },
   },
   reviews: {
     eyebrow: "Avis clientes",

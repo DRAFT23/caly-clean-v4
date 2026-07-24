@@ -2,21 +2,18 @@ import Image from "next/image";
 import Reveal from "./Reveal";
 import type { Dictionary } from "../lib/dictionaries/fr";
 
-const images = {
-  main: {
-    src: "/atelier-poste.webp",
-    alt: "Caly Nails workspace",
-  },
-  secondary: [
-    { src: "/hygiene.webp", alt: "Caly Nails hygiene & care" },
-    { src: "/produits-vernis.webp", alt: "Caly Nails professional products" },
-  ],
-};
-
-const allImages = [images.main, ...images.secondary];
-
 export default function OurWorld({ dict }: { dict: Dictionary }) {
   const t = dict.ourWorld;
+
+  const images = {
+    main: { src: "/atelier-poste.webp", alt: t.images.main },
+    secondary: [
+      { src: "/hygiene.webp", alt: t.images.hygiene },
+      { src: "/produits-vernis.webp", alt: t.images.products },
+    ],
+  };
+
+  const allImages = [images.main, ...images.secondary];
 
   return (
     <section id="world" className="bg-[#f8f4ef] px-6 py-16 md:py-32">

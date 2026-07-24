@@ -98,6 +98,11 @@ export interface Dictionary {
     title: string;
     paragraph: string;
     values: string[];
+    images: {
+      main: string;
+      hygiene: string;
+      products: string;
+    };
   };
 
   reviews: {

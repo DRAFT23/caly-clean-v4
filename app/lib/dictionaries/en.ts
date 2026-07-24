@@ -135,6 +135,11 @@ const en: Dictionary = {
       "Respect for the natural nail",
       "A warm experience",
     ],
+    images: {
+      main: "Caly Nails workspace",
+      hygiene: "Caly Nails hygiene & care",
+      products: "Caly Nails professional products",
+    },
   },
   reviews: {
     eyebrow: "Client reviews",
