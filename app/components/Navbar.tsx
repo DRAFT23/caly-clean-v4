@@ -9,10 +9,10 @@ function closeMobileMenu() {
 }
 
 const itemClass =
-  "flex items-center justify-between rounded-full bg-[#617261] px-5 py-3 text-base font-semibold text-white outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59]";
+  "flex items-center justify-between px-5 py-3 text-base font-semibold !text-[#2a2320] outline-none transition hover:!text-[#566b59] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#566b59] active:!text-[#566b59]";
 
 const subItemClass =
-  "rounded-lg py-1 outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white";
+  "rounded-lg py-1 !text-[#2a2320] outline-none transition hover:!text-[#566b59] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59] active:!text-[#566b59]";
 
 const navLinkClass =
   "transition hover:text-[#566b59] outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#566b59]";
@@ -24,9 +24,9 @@ export default function Navbar({ dict }: { dict: Dictionary }) {
 
   return (
     <nav className="fixed left-0 top-0 z-[9999] w-full border-b border-[#dcc8b5]/50 bg-[#f8f4ef]/95 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-8">
         <details id="mobile-menu" className="relative md:hidden">
-          <summary className="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-full bg-[#617261] text-xl font-semibold text-white outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59]">
+          <summary className="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-full text-xl font-semibold text-[#2a2320] outline-none transition hover:text-[#566b59] focus-visible:text-[#566b59] active:text-[#566b59]">
             <span aria-hidden="true">☰</span>
             <span className="sr-only">Menu</span>
           </summary>
@@ -37,16 +37,17 @@ export default function Navbar({ dict }: { dict: Dictionary }) {
                 {t.gallery} <span>→</span>
               </a>
 
-              <details className="rounded-[28px] bg-[#617261] px-5 py-3">
-                <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-white outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59]">
+              <details>
+                <summary className="flex cursor-pointer list-none items-center justify-between px-5 py-3 text-base font-semibold text-[#2a2320] outline-none transition hover:text-[#566b59] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#566b59] active:text-[#566b59]">
                   {t.services} <span>+</span>
                 </summary>
 
-                <div className="mt-4 grid gap-3 border-t border-white/20 pt-4 text-white">
+                <div className="mt-1 grid gap-3 border-t border-[#dcc8b5]/60 px-5 pt-4 text-[#2a2320]">
                   <a href="#services" onClick={closeMobileMenu} className={subItemClass}>{t.servicesMenu.manucure}</a>
                   <a href="#services" onClick={closeMobileMenu} className={subItemClass}>{t.servicesMenu.pieds}</a>
                   <a href="#services" onClick={closeMobileMenu} className={subItemClass}>{t.servicesMenu.nailart}</a>
                   <a href="#services" onClick={closeMobileMenu} className={subItemClass}>{t.servicesMenu.offres}</a>
+                  <a href="#services" onClick={closeMobileMenu} className={subItemClass}>{t.servicesMenu.gel}</a>
                 </div>
               </details>
 
@@ -69,15 +70,11 @@ export default function Navbar({ dict }: { dict: Dictionary }) {
               <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className={itemClass}>
                 {t.instagram} <span>→</span>
               </a>
-
-              <Link href={otherLocaleHref} onClick={closeMobileMenu} className={itemClass}>
-                {otherLocaleLabel} <span>→</span>
-              </Link>
             </div>
           </div>
         </details>
 
-        <Link href={dict.locale === "fr" ? "/" : "/en"} className="font-serif text-2xl tracking-[0.12em]">
+        <Link href={dict.locale === "fr" ? "/" : "/en"} className="whitespace-nowrap font-serif text-2xl tracking-[0.12em]">
           Caly Nails
         </Link>
 
@@ -97,14 +94,23 @@ export default function Navbar({ dict }: { dict: Dictionary }) {
           </Link>
         </div>
 
-        <a
-          href={SALONKEE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-full bg-[#617261] px-5 py-3 text-sm font-semibold text-white outline-none transition hover:bg-[#566b59] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59] md:px-6"
-        >
-          {t.book}
-        </a>
+        <div className="flex items-center gap-1 sm:gap-2">
+          <a
+            href={SALONKEE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whitespace-nowrap rounded-full bg-[#617261] px-7 py-3.5 text-center text-xs font-semibold !text-white outline-none transition hover:bg-[#566b59] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59] active:bg-[#566b59] md:px-6 md:py-3 md:text-sm"
+          >
+            {t.book}
+          </a>
+
+          <Link
+            href={otherLocaleHref}
+            className="flex h-11 items-center justify-center rounded-full border border-[#dcc8b5] px-2.5 text-xs font-semibold text-[#2a2320] outline-none transition hover:border-[#6f836f] hover:text-[#6f836f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#566b59] md:hidden"
+          >
+            {otherLocaleLabel}
+          </Link>
+        </div>
       </div>
     </nav>
   );

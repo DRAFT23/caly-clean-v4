@@ -29,6 +29,7 @@ const en: Dictionary = {
       pieds: "Foot care",
       nailart: "Nail Art",
       offres: "Offers",
+      gel: "Gel",
     },
   },
   hero: {
@@ -74,6 +75,7 @@ const en: Dictionary = {
     oldPriceLabel: "instead of",
     tabs: [
       { id: "manucure", label: "Manicure" },
+      { id: "gel", label: "Gel" },
       { id: "pieds", label: "Foot care" },
       { id: "nailart", label: "Nail Art" },
       { id: "offres", label: "Offers" },
@@ -86,13 +88,15 @@ const en: Dictionary = {
         { title: "Manicure & gel polish", description: "A glossy, long-lasting, refined result.", price: "65 CHF", time: "45 min", note: "+ removal add. +10 CHF" },
         { title: "Gel polish without manicure", description: "Filing and gel polish on natural nails.", price: "50 CHF", time: "30 min" },
         { title: "Natural nail strengthening", description: "Strengthens the nail while keeping a natural look.", price: "75 CHF", time: "50 min" },
+        { title: "Broken nail repair", description: "Spot correction to restore a harmonious set.", price: "from 5 CHF" },
+        { title: "Gel polish removal", description: "Gentle, clean removal of gel polish.", price: "20 CHF", time: "20 min" },
+        { title: "Mini manicure", description: "Light treatment reserved for under-14s.", price: "20 CHF", time: "15 min", note: "under 14 only" },
+      ],
+      gel: [
         { title: "Gel fill-in", description: "Maintenance of your gel set for up to 4 weeks.", price: "90 CHF", time: "75 min", note: "max 4 weeks" },
         { title: "Gel fill-in, 4+ weeks", description: "A full refresh of your gel set.", price: "100 CHF", time: "90 min" },
         { title: "Full gel extension (tips)", description: "Full extension with custom sculpting.", price: "120 CHF", time: "90 min" },
-        { title: "Broken nail repair", description: "Spot correction to restore a harmonious set.", price: "from 5 CHF" },
-        { title: "Gel polish removal", description: "Gentle, clean removal of gel polish.", price: "20 CHF", time: "20 min" },
         { title: "Gel removal", description: "Gel removal with care for the natural nail.", price: "30 CHF", time: "30 min" },
-        { title: "Mini manicure", description: "Light treatment reserved for under-14s.", price: "20 CHF", time: "15 min", note: "under 14 only" },
       ],
       pieds: [
         { title: "Express pedicure, no polish", description: "Quick treatment for clean, well-kept feet.", price: "50 CHF", time: "30 min" },

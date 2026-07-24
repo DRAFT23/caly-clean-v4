@@ -40,6 +40,12 @@ yarn-error.log*
 # vercel
 .vercel
 
+# claude code (local/personal config only — shared config lives in .claude/settings.json and .claude/skills/)
+.claude/settings.local.json
+
+# local QA artifacts (kept on disk, not versioned)
+screenshots-review/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

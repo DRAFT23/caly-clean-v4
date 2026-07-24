@@ -25,7 +25,7 @@ export interface ReviewItem {
 }
 
 export interface Tab {
-  id: "manucure" | "pieds" | "nailart" | "offres";
+  id: "manucure" | "pieds" | "nailart" | "offres" | "gel";
   label: string;
 }
 
@@ -52,6 +52,7 @@ export interface Dictionary {
       pieds: string;
       nailart: string;
       offres: string;
+      gel: string;
     };
   };
 
@@ -88,6 +89,7 @@ export interface Dictionary {
       pieds: Service[];
       nailart: Service[];
       offres: Service[];
+      gel: Service[];
     };
   };
 
