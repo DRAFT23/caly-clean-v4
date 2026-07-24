@@ -59,5 +59,5 @@ Après une modification importante :
 # Documentation et Skills
 
 - Documentation détaillée → [docs/](docs/) (architecture, workflow, sécurité, déploiement, workflow IA)
-- Expertise réutilisable → `.claude/skills/`, index dans [docs/skills.md](docs/skills.md)
-- Ce fichier reste une constitution courte et stable : les détails vivent dans `docs/` et `.claude/skills/`, jamais dupliqués ici.
+- Expertise réutilisable → skills globaux Claude Code dans `~/.claude/skills/` (scope utilisateur, partagés entre tous les projets, non versionnés dans ce dépôt), index dans [docs/skills.md](docs/skills.md)
+- Ce fichier reste une constitution courte et stable : les détails vivent dans `docs/` et dans les skills globaux, jamais dupliqués ici.
