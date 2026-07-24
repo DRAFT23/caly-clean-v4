@@ -41,6 +41,14 @@ Deux alertes Dependabot restent ouvertes après la mise à jour de `next` vers `
 - **Mesures compensatoires** : Caly Nails ne traite aucun CSS soumis par un utilisateur à l'exécution — le CSS (Tailwind) est entièrement compilé au build à partir de code source, jamais de contenu externe. Exploitabilité nulle dans ce contexte.
 - **Condition de réévaluation** : idem `sharp`, suivre les prochaines releases `next`.
 
+### `postcss` ≤ 8.5.11 (high, GHSA-6g55-p6wh-862q, Dependabot #12) — même instance imbriquée dans `next`
+
+- **Chemin** : même dépendance imbriquée que ci-dessus, `node_modules/next/node_modules/postcss@8.4.31`. L'instance top-level (`node_modules/postcss@8.5.20`, via `@tailwindcss/postcss`) est en version 8.5.12+ et n'est pas concernée.
+- **Portée** : lecture de fichiers arbitraires et divulgation d'information via traversée de chemin dans le traitement des commentaires `sourceMappingURL` d'un CSS **soumis par un utilisateur/attaquant** (le composant `PreviousMap` charge le chemin indiqué sans validation).
+- **Pourquoi non corrigé** : version épinglée exactement par `next`, aucune override sûre disponible (même contrainte que l'alerte précédente).
+- **Mesures compensatoires** : identique — Caly Nails ne traite aucun CSS soumis par un utilisateur à l'exécution ; le seul CSS traité par PostCSS est celui de Tailwind, compilé au build à partir du code source du dépôt, jamais de contenu externe ou attaquant-contrôlé. Exploitabilité nulle dans ce contexte.
+- **Condition de réévaluation** : idem `sharp`/alerte précédente, suivre les prochaines releases `next`.
+
 ## Claude Code
 
 - `bypassPermissions` n'est jamais utilisé sur ce projet.

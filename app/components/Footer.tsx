@@ -41,7 +41,9 @@ export default function Footer({ dict }: { dict: Dictionary }) {
             </p>
 
             <div className="mt-10 space-y-2 text-white/70">
-              <p>📍 {ADDRESS.street}</p>
+              <p>
+                <span aria-hidden="true">📍</span> {ADDRESS.street}
+              </p>
 
               <p>
                 {ADDRESS.postalCode} {ADDRESS.city} · {t.country}
@@ -53,7 +55,7 @@ export default function Footer({ dict }: { dict: Dictionary }) {
                 rel="noopener noreferrer"
                 className={`inline-block transition hover:text-[#B9975B] ${focusLink}`}
               >
-                ☎ {PHONE_DISPLAY}
+                <span aria-hidden="true">☎</span> {PHONE_DISPLAY}
               </a>
             </div>
 
