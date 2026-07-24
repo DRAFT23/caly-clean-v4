@@ -11,16 +11,18 @@ import en from "../lib/dictionaries/en";
 
 export default function Home() {
   return (
-    <main className="bg-[#f8f4ef]">
-      <Navbar dict={en} />
-      <Hero dict={en} />
-      <Gallery dict={en} />
-      <Services dict={en} />
-      <OurWorld dict={en} />
-      <Reviews dict={en} />
-      <CTA dict={en} />
+    <>
+      <main className="bg-[#f8f4ef]">
+        <Navbar dict={en} />
+        <Hero dict={en} />
+        <Gallery dict={en} />
+        <Services dict={en} />
+        <OurWorld dict={en} />
+        <Reviews dict={en} />
+        <CTA dict={en} />
+      </main>
       <Footer dict={en} />
       <StickyBookingBar dict={en} />
-    </main>
+    </>
   );
 }
